@@ -66,21 +66,6 @@
     text-transform:uppercase; color:hsl(30 15% 95% / .4); margin-right:6px}
   .legal{margin-top:40px; font-family:'JetBrains Mono',monospace; font-size:10px;
     letter-spacing:.15em; text-transform:uppercase; color:hsl(30 15% 95% / .35); line-height:1.8}
-  /* pomarańczowe kółko podążające za kursorem */
-  .cursor-glow{
-    position:fixed; top:0; left:0; width:26px; height:26px; border-radius:50%;
-    border:1.5px solid var(--accent);
-    box-shadow:0 0 16px hsl(20 95% 55% / .45), inset 0 0 8px hsl(20 95% 55% / .25);
-    transform:translate(-50%,-50%); pointer-events:none; z-index:9999;
-    opacity:0; transition:opacity .25s ease; will-change:transform; mix-blend-mode:screen;
-  }
-  .cursor-glow::after{
-    content:""; position:absolute; top:50%; left:50%; width:5px; height:5px;
-    border-radius:50%; background:var(--accent); transform:translate(-50%,-50%);
-    box-shadow:0 0 8px hsl(20 95% 55% / .9);
-  }
-  @media (hover:none){ .cursor-glow{display:none} }
-  @media (prefers-reduced-motion:reduce){ .cursor-glow{display:none} }
 </style>
 </head>
 <body>
@@ -115,24 +100,5 @@
     </div>
 
   </div>
-
-  <div class="cursor-glow" id="cursorGlow"></div>
-  <script>
-    (function(){
-      var g = document.getElementById('cursorGlow');
-      if(!g) return;
-      var tx=0, ty=0, cx=0, cy=0, active=false;
-      window.addEventListener('mousemove', function(e){
-        tx=e.clientX; ty=e.clientY;
-        if(!active){ active=true; cx=tx; cy=ty; g.style.opacity='1'; }
-      });
-      document.addEventListener('mouseleave', function(){ g.style.opacity='0'; });
-      (function loop(){
-        cx += (tx-cx)*0.18; cy += (ty-cy)*0.18;   // płynne podążanie z lekkim opóźnieniem
-        g.style.transform = 'translate(' + cx + 'px,' + cy + 'px) translate(-50%,-50%)';
-        requestAnimationFrame(loop);
-      })();
-    })();
-  </script>
 </body>
 </html>
