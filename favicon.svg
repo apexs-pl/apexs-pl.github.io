@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!--
+    APEX Support — Master Favicon (SVG)
+    Wyeksportuj do PNG w rozmiarach: 16, 32, 192, 512.
+
+    Polecenia:
+    rsvg-convert -w 16  -h 16  favicon.svg -o favicon-16.png
+    rsvg-convert -w 32  -h 32  favicon.svg -o favicon-32.png
+    rsvg-convert -w 180 -h 180 favicon.svg -o apple-touch-icon.png
+    rsvg-convert -w 192 -h 192 favicon.svg -o icon-192.png
+    rsvg-convert -w 512 -h 512 favicon.svg -o icon-512.png
+  -->
+  <!-- Dark background for visibility on light browser chrome -->
+  <rect width="32" height="32" rx="6" fill="hsl(24, 10%, 6%)"/>
+  <!-- "A" shape -->
+  <path d="M6 26 L16 5 L26 26" stroke="hsl(30, 15%, 95%)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="11" y1="19" x2="21" y2="19" stroke="hsl(20, 95%, 55%)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="16" cy="19" r="2" fill="hsl(20, 95%, 55%)"/>
+</svg>
